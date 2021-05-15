@@ -27,11 +27,11 @@
 | name                   | string     | null:false                    |
 | price                  | integer    | null:false                    |
 | description            | text       | null:false                    |
-| category_id            | integer    | null:false, foreign_key: true |
-| condition_id           | integer    | null:false, foreign_key: true |
-| shipping_cost_id       | integer    | null:false, foreign_key: true |
-| prefecture_id          | integer    | null:false, foreign_key: true | 
-| shipping_date_id       | integer    | null:false, foreign_key: true |
+| category_id            | integer    | null:false                    |
+| condition_id           | integer    | null:false                    |
+| shipping_cost_id       | integer    | null:false                    |
+| prefecture_id          | integer    | null:false                    | 
+| shipping_date_id       | integer    | null:false                    |
 <br>
 
 ### Association
@@ -45,7 +45,7 @@
 | ------------- | ---------- | ----------------------------- |
 | buyer         | references | null:false, foreign_key: true |
 | postal_code   | string     | null:false                    |
-| prefecture_id | integer    | null:false, foreign_key: true |
+| prefecture_id | integer    | null:false                    |
 | city          | string     | null:false                    |
 | address       | string     | null:false                    |
 | building      | string     |                               |
