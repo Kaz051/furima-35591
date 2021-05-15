@@ -23,15 +23,15 @@
 ### itemsテーブル
 | Column                 | Type       | Option                        |
 | ---------------------- | ---------- | ----------------------------- |
-| user                   | integer    | null:false, foreign_key: true |
-| name                   | integer    | null:false                    |
+| user                   | references | null:false, foreign_key: true |
+| name                   | string     | null:false                    |
 | price                  | integer    | null:false                    |
 | description            | text       | null:false                    |
-| category               | integer    | null:false, foreign_key: true |
-| condition              | integer    | null:false, foreign_key: true |
-| shipping_cost          | integer    | null:false, foreign_key: true |
-| prefecture             | integer    | null:false, foreign_key: true | 
-| shipping_date          | integer    | null:false, foreign_key: true |
+| category_id            | integer    | null:false, foreign_key: true |
+| condition_id           | integer    | null:false, foreign_key: true |
+| shipping_cost_id       | integer    | null:false, foreign_key: true |
+| prefecture_id          | integer    | null:false, foreign_key: true | 
+| shipping_date_id       | integer    | null:false, foreign_key: true |
 <br>
 
 ### Association
@@ -41,15 +41,15 @@
 <br>
 
 ### destinationsテーブル
-| Column       | Type       | Option                        |
-| ------------ | ---------- | ----------------------------- |
-| buyer        | integer    | null:false, foreign_key: true |
-| postal_code  | string     | null:false                    |
-| prefecture   | integer    | null:false, foreign_key: true |
-| city         | string     | null:false                    |
-| address      | string     | null:false                    |
-| building     | string     |                               |
-| phone_number | string     | null:false                    | 
+| Column        | Type       | Option                        |
+| ------------- | ---------- | ----------------------------- |
+| buyer         | references | null:false, foreign_key: true |
+| postal_code   | string     | null:false                    |
+| prefecture_id | integer    | null:false, foreign_key: true |
+| city          | string     | null:false                    |
+| address       | string     | null:false                    |
+| building      | string     |                               |
+| phone_number  | string     | null:false                    | 
 <br>
 
 ### Association
@@ -60,8 +60,8 @@
 ### buyersテーブル
 | Column  | Type       | Option                        |
 | ------- | ---------- | ----------------------------- |
-| user    | integer    | null:false, foreign_key: true |
-| item    | integer    | null:false, foreign_key: true |
+| user    | references | null:false, foreign_key: true |
+| item    | references | null:false, foreign_key: true |
 <br>
 
 ### Association
