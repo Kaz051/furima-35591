@@ -23,15 +23,15 @@
 ### itemsテーブル
 | Column                 | Type       | Option                        |
 | ---------------------- | ---------- | ----------------------------- |
-| user_id                | string     | null:false, foreign_key: true |
-| item_name              | string     | null:false                    |
+| user                   | integer    | null:false, foreign_key: true |
+| name                   | integer    | null:false                    |
 | price                  | integer    | null:false                    |
 | description            | text       | null:false                    |
-| category_id            | integer    | null:false, foreign_key: true |
-| condition_id           | integer    | null:false, foreign_key: true |
-| shipping_cost_id_      | integer    | null:false, foreign_key: true |
-| shipping_prefecture_id | integer    | null:false, foreign_key: true | 
-| shipping_date_id       | integer    | null:false, foreign_key: true |
+| category               | integer    | null:false, foreign_key: true |
+| condition              | integer    | null:false, foreign_key: true |
+| shipping_cost          | integer    | null:false, foreign_key: true |
+| prefecture             | integer    | null:false, foreign_key: true | 
+| shipping_date          | integer    | null:false, foreign_key: true |
 <br>
 
 ### Association
@@ -43,9 +43,9 @@
 ### destinationsテーブル
 | Column       | Type       | Option                        |
 | ------------ | ---------- | ----------------------------- |
-| buyer_id     | string     | null:false, foreign_key: true |
+| buyer        | integer    | null:false, foreign_key: true |
 | postal_code  | string     | null:false                    |
-| prefecture   | string     | null:false                    |
+| prefecture   | integer    | null:false, foreign_key: true |
 | city         | string     | null:false                    |
 | address      | string     | null:false                    |
 | building     | string     |                               |
@@ -60,8 +60,8 @@
 ### buyersテーブル
 | Column  | Type       | Option                        |
 | ------- | ---------- | ----------------------------- |
-| user_id | string     | null:false, foreign_key: true |
-| item_id | string     | null:false, foreign_key: true |
+| user    | integer    | null:false, foreign_key: true |
+| item    | integer    | null:false, foreign_key: true |
 <br>
 
 ### Association
