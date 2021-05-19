@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :category
   belongs_to :condition
+  belongs_to :shipping_cost
 
   belongs_to :user
   has_one_attached :image
@@ -10,7 +11,8 @@ class Item < ApplicationRecord
   with_options numericality: { other_than: 1 } do
     validates :prefecture_id
     validates :category_id
-    validates :condition_id  
+    validates :condition_id
+    validates :shipping_cost_id
   end   
 
   with_options presence: true do
