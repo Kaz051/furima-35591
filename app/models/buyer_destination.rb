@@ -15,4 +15,9 @@ class BuyerDestination
 
   validates :prefecture_id, numericality: { other_than: 1 }
 
+  def save
+    buyer = Buyer.create(user_id: user_id, item_id: item_id)
+    Destination.create(postal_code: postal_code, prefecture_id: prefecture_id, city: city, address: address, building: building, phone_number: phone_number, buyer_id: buyer.id)
+  endbuyer
+
 end
