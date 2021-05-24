@@ -9,12 +9,13 @@ class BuyersController < ApplicationController
   end
 
   def create
+    @item = Item.find(params[:item_id])
     @buyer_destination = BuyerDestination.new(buyer_params)
     if @buyer_destination.valid?
       @buyer_destination.save
       redirect_to root_path
     else
-       render :new
+       render :index
     end
   end
 
